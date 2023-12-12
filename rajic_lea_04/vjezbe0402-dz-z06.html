@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zbrajanje Brojeva</title>
+    <script>
+        function zbroji() {
+            var prviBroj = parseFloat(document.getElementById('prviBroj').value);
+            var drugiBroj = parseFloat(document.getElementById('drugiBroj').value);
+
+            if (isNaN(prviBroj) || isNaN(drugiBroj)) {
+                alert('Unesite valjane brojeve.');
+                return;
+            }
+
+            var rezultat = prviBroj + drugiBroj;
+
+            document.getElementById('rezultat').value = rezultat;
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Zbrajanje Brojeva</h2>
+
+    <form>
+        <label>X = </label>
+        <input type="text" id="prviBroj">
+<br>
+<br>
+        <label>Y = </label>
+        <input type="text" id="drugiBroj">
+<br>
+<br>
+        <button type="button" onclick="zbroji()">Zbroji</button>
+<br>
+<br>
+        <label>Rezultat = </label>
+        <input type="text" id="rezultat">
+    </form>
+
+</body>
+</html>

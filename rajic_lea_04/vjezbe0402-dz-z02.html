@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promijeni pozadinu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #promijeniPozadinuBtn {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="promijeniPozadinuBtn" onclick="promijeniPozadinu()">Promijeni pozadinu</button>
+    <p id="trenutnaBoja"></p>
+
+    <script>
+        function generirajNasumicnuBoju() {
+            // Generiranje nasumicne boje u rasponu od #000000 do #FFFFFF
+            return '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
+        }
+
+        function promijeniPozadinu() {
+            // Pozivanje funkcije za generiranje nasumicne boje
+            var novaBoja = generirajNasumicnuBoju();
+
+            // Postavljanje nove boje pozadine
+            document.body.style.backgroundColor = novaBoja;
+
+            // Ispis trenutne boje ispod buttona
+            document.getElementById('trenutnaBoja').innerHTML = 'Trenutna boja: ' + novaBoja;
+        }
+    </script>
+
+</body>
+</html>

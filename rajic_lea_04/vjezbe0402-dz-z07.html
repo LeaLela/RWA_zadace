@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Izračunaj godine</title>
+</head>
+<body>
+
+    <form id="datumForma">
+        <label>Dan rođenja:</label>
+        <input type="number" id="dan">
+
+        <label>Mjesec rođenja:</label>
+        <input type="number" id="mjesec">
+
+        <label>Godina rođenja:</label>
+        <input type="number" id="godina" >
+
+        <button type="button" onclick="izracunajGodine()">Izračunaj</button>
+    </form>
+
+    <script>
+        function izracunajGodine() {
+            var danInput = document.getElementById('dan');
+            var mjesecInput = document.getElementById('mjesec');
+            var godinaInput = document.getElementById('godina');
+
+            var dan = parseInt(danInput.value);
+            var mjesec = parseInt(mjesecInput.value);
+            var godina = parseInt(godinaInput.value);
+
+            if (isNaN(dan) || isNaN(mjesec) || isNaN(godina)) {
+                alert('Unesite valjane datume.');
+                return;
+            }
+
+            var trenutniDatum = new Date();
+            var trenutnaGodina = trenutniDatum.getFullYear();
+            var trenutniMjesec = trenutniDatum.getMonth() + 1;
+
+            var godine = trenutnaGodina - godina;
+
+            // ako mjesec rodjenja nije prosao ove godine, smanji broj godina za 1
+            if (mjesec > trenutniMjesec || (mjesec === trenutniMjesec && dan > trenutniDatum.getDate())) {
+                godine--;
+            }
+
+            alert('Imate ' + godine + ' godina.');
+        }
+    </script>
+
+</body>
+</html>

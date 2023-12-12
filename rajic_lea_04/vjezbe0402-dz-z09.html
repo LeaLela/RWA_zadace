@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Žarulja</title>
+    <style>
+        img {
+            width: 500 px;
+            height: 500 px;
+        }
+    </style>
+    <script>
+        function toggleLight() {
+            var switchElement = document.getElementById('switch');
+            var lightBulbElement = document.getElementById('lightBulb');
+
+            if (switchElement.checked) {
+                // Žarulja je upaljena
+                lightBulbElement.src = "zarulja_on_2.png";
+            } else {
+                // Žarulja je ugašena
+                lightBulbElement.src = "zarulja_off_2.png";
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Smart Žarulja</h1>
+
+    <label for="switch">Prekidač:</label>
+    <input type="checkbox" id="switch" onclick="toggleLight()">
+
+    <br>
+
+    <img id="lightBulb" src="zarulja_off_2.png" alt="Žarulja">
+
+</body>
+</html>

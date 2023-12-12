@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocjena</title>
+</head>
+<body>
+
+    <form id="ocjenaForma">
+        <label>Unesite ocjenu (1-5):</label>
+        <input type="text" id="ocjena" name="ocjena">
+        <button type="button" onclick="ispisiOcjenu()">Ispiši ocjenu</button>
+    </form>
+
+    <p id="ispisOcjene"></p>
+
+    <script>
+        function ispisiOcjenu() {
+    
+            var ocjenaInput = document.getElementById('ocjena');
+            var ocjena = ocjenaInput.value;
+
+            var ispisOcjeneElement = document.getElementById('ispisOcjene');
+
+            switch (ocjena) {
+                case '1':
+                    ispisOcjeneElement.textContent = 'Ocjena: Nedovoljan';
+                    break;
+                case '2':
+                    ispisOcjeneElement.textContent = 'Ocjena: Dovoljan';
+                    break;
+                case '3':
+                    ispisOcjeneElement.textContent = 'Ocjena: Dobar';
+                    break;
+                case '4':
+                    ispisOcjeneElement.textContent = 'Ocjena: Vrlo dobar';
+                    break;
+                case '5':
+                    ispisOcjeneElement.textContent = 'Ocjena: Odličan';
+                    break;
+                default:
+                    ispisOcjeneElement.textContent = 'Unesite ocjenu od 1 do 5.';
+            }
+        }
+    </script>
+
+</body>
+</html>

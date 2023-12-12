@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aritmetička i Geometrijska Sredina</title>
+    <script>
+        function calculateMeans() {
+            // Unos skupa brojeva
+            var numbersInput = prompt("Unesite brojeve odvojene zarezom, npr. 1, 4, 16");
+
+            // Pretvaranje unosa u niz brojeva
+            var numbersArray = numbersInput.split(",").map(function(item) {
+                return parseInt(item.trim());
+            });
+
+            // Izracun aritmeticke sredine
+            var arithmeticMean = calculateArithmeticMean(numbersArray);
+
+            // Izracun geometrijske sredine
+            var geometricMean = calculateGeometricMean(numbersArray);
+
+            // Prikaz rezultata na stranici
+            document.getElementById("result").innerHTML = "Aritmetička sredina: " + arithmeticMean + "<br>Geometrijska sredina: " + geometricMean;
+        }
+
+        function calculateArithmeticMean(numbers) {
+            var sum = numbers.reduce(function(acc, val) {
+                return acc + val;
+            }, 0);
+
+            return sum / numbers.length;
+        }
+
+        function calculateGeometricMean(numbers) {
+            var product = numbers.reduce(function(acc, val) {
+                return acc * val;
+            }, 1);
+
+            return Math.pow(product, 1 / numbers.length);
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Izračun Aritmetičke i Geometrijske Sredine</h1>
+
+    <button onclick="calculateMeans()">Izračunaj</button>
+
+    <div id="result"></div>
+
+</body>
+</html>

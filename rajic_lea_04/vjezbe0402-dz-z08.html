@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Kalkulator</title>
+    <script>
+        function calculate(operation) {
+            var result;
+            var number1 = parseFloat(document.getElementById('number1').value);
+            var number2 = parseFloat(document.getElementById('number2').value);
+
+            switch (operation) {
+                case 'add':
+                    result = number1 + number2;
+                    break;
+                case 'subtract':
+                    result = number1 - number2;
+                    break;
+                case 'multiply':
+                    result = number1 * number2;
+                    break;
+                case 'divide':
+                    result = number1 / number2;
+                    break;
+                case 'sin':
+                    result = Math.sin(number1);
+                    break;
+                case 'cos':
+                    result = Math.cos(number1);
+                    break;
+                case 'tan':
+                    result = Math.tan(number1);
+                    break;
+                case 'log':
+                    result = Math.log(number1);
+                    break;
+                case 'log10':
+                    result = Math.log10(number1);
+                    break;
+                case 'square':
+                    result = Math.pow(number1, 2);
+                    break;
+                case 'cube':
+                    result = Math.pow(number1, 3);
+                    break;
+                case 'power':
+                    result = Math.pow(number1, number2);
+                    break;
+                default:
+                    alert('Nepoznata operacija');
+                    return;
+            
+            }
+
+            alert('Rezultat operacije ' + operation + ': ' + result);
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Online Kalkulator</h1>
+
+    <div>
+        <label>Broj 1:</label>
+        <input type="text" id="number1" />
+    </div>
+<br>
+    <div>
+        <label>Broj 2:</label>
+        <input type="text" id="number2" />
+    </div>
+<br>
+    <div>
+        <button style="margin: 5px" onclick="calculate('add')">+</button>
+        <button style="margin: 5px" onclick="calculate('subtract')">-</button>
+        <button style="margin: 5px" onclick="calculate('multiply')">*</button>
+        <button style="margin: 5px" onclick="calculate('divide')">/</button>
+    </div>
+<br>
+    <div>
+        <button style="margin: 5px" onclick="calculate('sin')">Sin</button>
+        <button style="margin: 5px" onclick="calculate('cos')">Cos</button>
+        <button style="margin: 5px" onclick="calculate('tan')">Tan</button>
+        <button style="margin: 5px" onclick="calculate('log')">Log</button>
+    </div>
+<br>
+    <div>
+        <button style="margin: 5px" onclick="calculate('log10')">Log 10</button>
+        <button style="margin: 5px" onclick="calculate('square')">^2</button>
+        <button style="margin: 5px" onclick="calculate('cube')">^3</button>
+        <button style="margin: 5px" onclick="calculate('power')">^n</button>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocjena</title>
+</head>
+<body>
+
+    <form id="ocjenaForma">
+        <label>Unesite ocjenu (1-5):</label>
+        <input type="text" id="ocjena" name="ocjena">
+        <button type="button" onclick="provjeriOcjenu()">Provjeri</button>
+    </form>
+
+    <script>
+        function provjeriOcjenu() {
+
+            var ocjenaInput = document.getElementById('ocjena');
+            var ocjena = ocjenaInput.value;
+
+            switch (ocjena) {
+                case '1':
+                    alert('Nedovoljan');
+                    break;
+                case '2':
+                    alert('Dovoljan');
+                    break;
+                case '3':
+                    alert('Dobar');
+                    break;
+                case '4':
+                    alert('Vrlo dobar');
+                    break;
+                case '5':
+                    alert('Odličan');
+                    break;
+                default:
+                    alert('Unesite ocjenu od 1 do 5.');
+            }
+        }
+    </script>
+
+</body>
+</html>

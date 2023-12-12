@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validacija Registarske Oznake</title>
+    <script>
+        function validirajFormu() {
+            // Dohvati vrijednost iz input polja
+            var registarskaOznaka = document.getElementById('registarskaOznaka').value.toUpperCase();
+
+            // Regex za validaciju registarske oznake BiH vozila
+            var regex = /^[A-ZČĆŠŽĐ]{1,2}\d{4,5}[A-ZČĆŠŽĐ]{1,2}$/;
+
+            // Provjeri da li je unesena oznaka u ispravnom formatu
+            var ispravnaOznaka = regex.test(registarskaOznaka);
+
+            // Prikazi rezultat validacije koristeci alert
+            if (ispravnaOznaka) {
+                alert('Registarska oznaka je ispravna!');
+            } else {
+                alert('Neispravan format registarske oznake!');
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Validacija Registarske Oznake</h2>
+
+    <form>
+        <label for="registarskaOznaka">Unesite registarsku oznaku: </label>
+        <input type="text" id="registarskaOznaka" name="registarskaOznaka" required>
+
+        <!-- Poziv funkcije validacije prilikom klika na dugme -->
+        <button type="button" onclick="validirajFormu()">Validiraj</button>
+    </form>
+
+</body>
+</html>
